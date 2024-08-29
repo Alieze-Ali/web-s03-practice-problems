@@ -20,14 +20,33 @@
     //   }
 
     //ENTER YOUR CODE HERE
-
+   //console.log('Hello world!')
+    const plane = {
+      make: 'Boeing',
+      model: 737,
+      holds: 500,
+      odometer: 0,
+      destination: 'Phucket, Thailand',
+      fly(miles) {
+        plane.odometer += miles;
+        return `${this.holds} passengers have flown ${miles} towards ${this.destination}, putting the plane's odometer at ${this.odometer}`;
+      }
+    }
+    //console.log(plane.fly(500))
 
     /*
     PROBLEM 2: Create a person object that includes:
       •A name property with a value of the person's name (e.g. "John")
       •A greet method that logs a message to the console, greeting the person by name. The message should include the person's name (e.g. "Hello, John!").
-
+    */
     //ENTER YOUR CODE HERE
+    const person = {
+      name: 'John',
+      greet(){
+        return `Hello ${this.name}!`
+      }
+    }
+    //console.log(person.greet());
 
      /*
     PROBLEM 3: Create an object named painter and includes:
@@ -38,6 +57,17 @@
     console.log the paint method to see the changing number of paintings
     */
     //ENTER YOUR CODE HERE
+    let painter = {
+      fav: 'Claude Monet',
+      medium: 'watercolor',
+      paintings: 10,
+      paint() {
+        return this.paintings++;
+      }
+    }
+    //console.log(painter.paint())
+    //console.log(painter.paint())
+    //console.log(painter.paint())
 
     /*
     PROBLEM 4: Create an object named adventurer and includes:
@@ -46,7 +76,21 @@
     •A method called heal that adds a number of health points to the character health property if it is less than 100.
     */
     //ENTER YOUR CODE HERE
-
+    const adventurer = {
+      type: 'Wizard',
+      health: 80,
+      heal(number) {
+        if(this.health < 100) {
+          this.health += number;
+          return `${this.type} has recovered ${number} health points, putting the adventurer at ${this.health} Health Points`
+        } else {
+          return `${this.type} has full health.`;
+        }
+      }
+    }
+    console.log(adventurer.heal(5))
+    console.log(adventurer.heal(50))
+    console.log(adventurer.heal(-90))
     /*
     PROBLEM 5 (DEBUGGING): The following code is supposed to create a bankAccount object, but you receive the error: 'Uncaught ReferenceError: balance is not defined'. Fix the errors and invoke the methods to display the correct messages.
 
@@ -67,7 +111,24 @@
     */
 
     //ENTER YOUR CODE HERE
-
+    
+    const bankAccount = {
+      balance: 0,
+      deposit: function(amount) {
+        this.balance += amount;
+        console.log(`Deposited $${amount}.`);
+      },
+      withdraw: function(amount) {
+        this.balance -= amount;
+        console.log(`Withdrawn $${amount}.`);
+      },
+      displayBalance: function() {
+        console.log(`Balance: $${this.balance}.`);
+      }
+    };
+    console.log(bankAccount.deposit(500))
+    console.log(bankAccount.withdraw(100))
+    console.log(bankAccount.displayBalance())
   </script>
 
 </body>
