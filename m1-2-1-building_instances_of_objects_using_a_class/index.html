@@ -18,6 +18,16 @@
     */
 
     //ENTER YOUR CODE HERE
+    class Student {
+      name = 'Jessica';
+      grade = 'B';
+      year = 3;
+      test() {
+        return `${this.name} received a ${this.grade} on the test`
+      }
+    }
+    const studentObject = new Student()
+    console.log(studentObject.test())
 
     /*
     PROBLEM 2: Use the dog object to create a dog class and instantiate a new dog named 'Lucy'. Console.log the new dog to see the dog class printed to the console.
@@ -36,7 +46,22 @@
     */
 
     //ENTER YOUR CODE HERE
-
+    class Dog {
+      name = 'Fido';
+      breed = 'Boxer';
+      age = 4;
+      bark() {
+        return 'bow wow!';
+      };
+      play(toy){
+        return `${this.name} loves playing with a ${toy}`
+      }
+    }
+    const Lucy = new Dog(); // defining Lucy as a new instance
+    Lucy.name = 'Lucy'; // declaring Lucy as a name
+    console.log(Lucy); // printing Lucy the object
+    console.log(Lucy.name) // printing the name Lucy to the console
+    console.log(Lucy.play('ball')); // printing the method play to the console with the name Lucy
      /*
     PROBLEM 3: Create a phone class and instantiate a new phone named 'blueberry'. Make sure to include:
       •An owner property that has a value of 'Steven'
