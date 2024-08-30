@@ -72,7 +72,20 @@
     */
 
     //ENTER YOUR CODE HERE
+    class Phone {
+     owner = 'Steven';
+     model = 'XM50';
+     calls = 9;
 
+      call(name) {
+        this.calls++;
+        return `I am making a call to ${name} from my ${this.model} phone.`;
+      }
+    }
+    const blueberry = new Phone();
+    blueberry.owner = 'blueberry';
+    console.log(blueberry);
+    console.log(blueberry.call('Blueberry'))
     /*
     PROBLEM 4: Create a video game class and instantiate a new game named 'bionix'. Make sure to include:
       •An genre property that has a value of 'Multiplayer RPG'
@@ -83,7 +96,23 @@
     */
 
     //ENTER YOUR CODE HERE
+    class VideoGame {
+      genre = 'Multiplayer RPG';
+      rating = '4.5';
+      players = 2;
 
+      play(number) {
+        if (this.players < 10){
+        this.players += number;
+        return `There are ${number} of players joining the game, bringing the total number of players to ${this.players}`
+        } else {
+          return `The party is full with ${this.players} players`;
+        }
+      }
+    }
+    const bionix = new VideoGame;
+    console.log(bionix.rating)
+    console.log(bionix.play(5))
     /*
     PROBLEM 5 (DEBUGGING): The following code defines a Book class. However, there is an "Uncaught SyntaxError: Unexpected identifier 'book' " error in the code that prevents it from running properly. Fix the code and create a new Book instance named 'magic'. Console.log the title and read method to the console to see the results printed to the console.
 
@@ -97,7 +126,17 @@
       }
     }
     */
-
+    class Book {
+      title = 'The magical Island';
+      author = 'Seymour Redding';
+      genre = 'fiction';
+      pages = 250;
+      read(number) {
+        return `read ${number} out of ${this.pages}`;
+      }
+    }
+    const magic = new Book;
+    console.log(magic.read(50))
   </script>
 
 </body>
